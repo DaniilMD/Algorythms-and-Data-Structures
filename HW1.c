@@ -3,44 +3,44 @@
 #include <math.h>
 #include <locale.h>
 
-// Çàäàíèå 1
+// Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 1
 double MassIndexCounter(double m, double h) {
 
     return m / (h * h);
 }
 
-// Çàäàíèå 2
+// Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 2
 int calculateSquareEquation(int a, int b, int c, double* x1, double* x2) {
     int D = (b*b - 4*a*c);
     double sqrtD = sqrt(D);
     if (D > 0) {
         *x1 = ((-b + sqrtD) / (2*a));
         *x2 = ((-b - sqrtD) / (2*a));
-        return 1; // Äâà êîðíÿ
+        return 1; // 2 ÐºÐ¾Ñ€Ð½Ñ
     } else if (D == 0) {
         *x1 = *x2 = ((-b + sqrtD) / (2*a));
-        return 0; // Îäèí êîðåíü
+        return 0; // 1 ÐºÐ¾Ñ€ÐµÐ½ÑŒ
     } else {
-        return -1; // Íåò êîðíåé
+        return -1; // Ð½ÐµÑ‚ ÐºÐ¾Ñ€Ð½ÐµÐ¹
     }
 }
 
-// Çàäàíèå 3
+// Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 3
 void AgeAnalysis(int age) {
     if ((((age % 10) >= 5) && ((age % 10) <= 9)) || ((age % 10) == 0) ){
-        printf("%d ëåò\n", age);
+        printf("%d Ð»ÐµÑ‚\n", age);
     } else if (((age % 100) >= 11) && ((age % 100) <= 19))  {
-        printf("%d ëåò\n", age);
+        printf("%d Ð»ÐµÑ‚\n", age);
     } else if ((age % 10) == 1) {
-        printf("%d ãîä\n", age);
+        printf("%d Ð³Ð¾Ð´\n", age);
     } else {
-        printf("%d ãîäà\n", age);
+        printf("%d Ð³Ð¾Ð´Ð°\n", age);
     }
 
 }
 
 
-//Çàäàíèå 4
+//Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 4
 
 int ColourEquality(int x1, int y1, int x2, int y2) {
 	if ((x1 % 2) == (y1 % 2)) {
@@ -59,7 +59,7 @@ int ColourEquality(int x1, int y1, int x2, int y2) {
 }
 
 
-// Çàäàíèå 5
+// Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 5
 
 void AutomorphicNumber() {
 	int num;
@@ -89,7 +89,7 @@ void AutomorphicNumber() {
 
 
 int main () {
-	setlocale(LC_ALL, "RUS");
+
 
 	// Test 1 task
     printf("%.2f\n", MassIndexCounter(60, 1.85));
@@ -99,11 +99,11 @@ int main () {
     double X1, X2;
     int indicator = calculateSquareEquation(1, 5, 2, &X1, &X2);
     if (indicator == 1) {
-        printf("Âàøå óðàâíåíèå èìååò 2 êîðíÿ: x1 = %f, x2 = %f\n", X1, X2);
+        printf("Ð’ Ð²Ð°ÑˆÐµÐ¼ ÑƒÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¸ 2 Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… ÐºÐ¾Ñ€Ð½Ñ: x1 = %f, x2 = %f\n", X1, X2);
     } else if (indicator == 0) {
-        printf("Âàøå óðàâíåíèå èìååò 1 êîðåíü êðàòíîñòè 2: x1 = x2 = %f\n", X1);
+        printf("Ð’ Ð²Ð°ÑˆÐµÐ¼ ÑƒÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¸ 1 Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ ÐºÐ¾Ñ€ÐµÐ½ÑŒ ÐºÑ€Ð°Ñ‚Ð½Ð¾ÑÑ‚Ð¸ 2: x1 = x2 = %f\n", X1);
     } else {
-        printf("Âàøå óðàâíåíèå íå èìååò äåéñòâèòåëüíûõ êîðíåé\n");
+        printf("Ð’ Ð²Ð°ÑˆÐµÐ¼ ÑƒÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¸ Ð½ÐµÑ‚ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… ÐºÐ¾Ñ€Ð½ÐµÐ¹\n");
     }
 
 
@@ -114,11 +114,11 @@ int main () {
 
 
     //Test 4 task
-    printf("Åñëè 1, òî îäèíàêîâûå öâåòà, åñëè 0, òî ðàçíûå: %d\n", ColourEquality(5, 5, 2, 3));
+    printf("Ð•ÑÐ»Ð¸ 1, Ñ‚Ð¾ Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ñ‹Ðµ Ñ†Ð²ÐµÑ‚Ð°, ÐµÑÐ»Ð¸ 0, Ñ‚Ð¾ Ñ€Ð°Ð·Ð½Ñ‹Ðµ: %d\n", ColourEquality(5, 5, 2, 3));
 
 
     //Test 5 task
-    printf("Àâòîìîðôíûå ÷èñëà îò 0 äî 10000 \n");
+    printf("ÐÐ²Ñ‚Ð¾Ð¼Ð¾Ñ€Ñ„Ð½Ñ‹Ðµ Ñ‡Ð¸ÑÐ»Ð° Ð¾Ñ‚ 0 Ð´Ð¾ 10000:\n");
     AutomorphicNumber();
 
 
