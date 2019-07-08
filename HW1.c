@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <locale.h>
+#include "HW2.h"
 
 // Задание 1
 double MassIndexCounter(double m, double h) {
@@ -90,7 +91,7 @@ void AutomorphicNumber() {
 
 int main () {
 
-
+	/*
 	// Test 1 task
     printf("%.2f\n", MassIndexCounter(60, 1.85));
 
@@ -120,7 +121,26 @@ int main () {
     //Test 5 task
     printf("Автоморфные числа от 0 до 10000:\n");
     AutomorphicNumber();
+	*/
 
 
-    return 0;
+	//Test 1 task
+	long long Dec = 0;
+    TransformDecIntoBin(12443, &Dec, 0);
+    printf("%I64d\n", Dec);
+
+
+    //Test 2 task b)
+    printf("%d\n", Involution(2, 10));
+
+
+    //Test 2 task c)
+    printf("%d\n", Power(4, 4));
+
+
+
+    //Test 3 task
+    int NumOfVar = 0;
+    VariantCounter(3, 20, &NumOfVar);
+    printf("%d\n", NumOfVar);
 }
