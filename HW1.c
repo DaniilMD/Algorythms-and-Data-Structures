@@ -3,6 +3,7 @@
 #include <math.h>
 #include <locale.h>
 #include "HW2.h"
+#include "HW3.h"
 
 // Задание 1
 double MassIndexCounter(double m, double h) {
@@ -143,4 +144,35 @@ int main () {
     int NumOfVar = 0;
     VariantCounter(3, 20, &NumOfVar);
     printf("%d\n", NumOfVar);
+
+
+
+    const int SIZE = 52;
+    int arr[SIZE];
+    fillArray(arr, SIZE);
+    printArray(arr, SIZE);
+    printf("Amount of bubbleSort operations: %d\n",  bubbleSort(arr, SIZE));
+    printArray(arr, SIZE);
+    printf("\n");
+
+    fillArray(arr, SIZE);
+    printArray(arr, SIZE);
+    printf("Amount of HastenedBubbleSort operations: %d\n",  HastenedBubbleSort(arr, SIZE));
+    printArray(arr, SIZE);
+    printf("\n");
+
+    int counter = 0;
+    int searchNum = 50;
+    fillArray(arr, SIZE);
+    printArray(arr, SIZE);
+    printf("The index of looked for number: %d\n",  recurLinear(arr, SIZE, searchNum, 0, &counter));
+    printf("Amount of recurLinear operations: %d\n",  counter);
+    printf("\n");
+
+    fillArray(arr, SIZE);
+	printArray(arr, SIZE);
+	printf("Amount of ShakerSort operations: %d\n",  ShakerSort(arr, SIZE));
+	printArray(arr, SIZE);
+	printf("\n");
+
 }
