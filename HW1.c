@@ -4,6 +4,7 @@
 #include <locale.h>
 #include "HW2.h"
 #include "HW3.h"
+#include "HW4.h"
 
 // Задание 1
 double MassIndexCounter(double m, double h) {
@@ -149,7 +150,8 @@ int main () {
 
     const int SIZE = 52;
     int arr[SIZE];
-    fillArray(arr, SIZE);
+
+    /*fillArray(arr, SIZE);
     printArray(arr, SIZE);
     printf("Amount of bubbleSort operations: %d\n",  bubbleSort(arr, SIZE));
     printArray(arr, SIZE);
@@ -173,6 +175,30 @@ int main () {
 	printArray(arr, SIZE);
 	printf("Amount of ShakerSort operations: %d\n",  ShakerSort(arr, SIZE));
 	printArray(arr, SIZE);
-	printf("\n");
+	printf("\n");*/
 
+    //Task 3
+	fillArray(arr, SIZE);
+	printArray(arr, SIZE);
+	HastenedBubbleSort(arr, SIZE);
+	printArray(arr, SIZE);
+	printf("The index of looked for number: %d\n", RecurBinarySearch(arr, SIZE, 27));
+
+	//Task 1
+	const int NoOfBlocks = 3;
+	const int BoardX = 8;
+	const int BoardY = 8;
+	int Blocks[] = {5, 1, 4, 4, 7, 6};
+	for (int i = 0; i < BoardX; i++) {
+		for (int j = 0; j < BoardY; j++) {
+			printf("%5d", RoutesForKingWithBlocks(i, j, NoOfBlocks, Blocks));
+		}
+   		printf("\n");
+    }
+
+
+	//Task 2
+	annull();
+	horses(1, -1, -2);
+	printBoard();
 }
