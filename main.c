@@ -8,51 +8,33 @@
 #include "HW3.h"
 #include "HW4.h"
 #include "HW5.h"
-
+#include "HW6.h"
 
 int main () {
-	//Test 1 task
-	char Bin[100];
-	int count = DecToBinStack(1023, Bin);
-	for (int i = 0; i < count; i++ ) {
-		printf("%c ", Bin[i]);
-	}
+    //Test 1 task
+    const int HASize = 10;
+    char HashArr[HASize];
+    strcpy(HashArr, "shfhefvkjbrkjwvbjskjv");
+    for (int i = 0; i < HASize; i++){
+        printf("%d ", HashArr[i]);
+        printf("%c ", HashArr[i]);
+    }
+    printf("\n%d\n", HashFunc(HashArr, HASize));
 
 
+    //Test 2 task
+    const int BTNSize = 15;
+    TREETYPE TreeArr[BTNSize];
+    BTN *BTree = NULL;
+    for (int i = 0; i < BTNSize; i++){
+        TreeArr[i] = rand() % 25;
+        BTinsert(&BTree, TreeArr[i]);
+    }
 
-	//Test 2 task
-	char Brackets[40];
-	strcpy(Brackets,"[{)}]");
-	printf("\n%d\n", CheckBr(6, Brackets));
-
-
-	//Test 3 task
-
-
-	//Test 4 task
-
-	DQueue dq;
-	dq.size = 0;
-	dq.head = NULL;
-
-
-
-	pushhead(&dq, 'a');
-	pushhead(&dq, 'b');
-	pushhead(&dq, 'c');
-	pushhead(&dq, 'd');
-	pushhead(&dq, 'e');
-
-	pushtail(&dq, '1');
-	pushtail(&dq, '2');
-	pushtail(&dq, '3');
-	pushtail(&dq, '4');
-	pushtail(&dq, '5');
-
-	int s = dq.size;
-	for (int i = 0; i < s / 2; i++) {
-		printf("%c ", popDQhead(&dq));
-		printf("%c ", popDQtail(&dq));
-	}
-
+    preOrderTravers(BTree);
+    printf("\n");
+    inOrderTravers(BTree);
+    printf("\n");
+    postOrderTravers(BTree);
+    printf("\n%d ", BTSearch(BTree, 11)->data);
 }
