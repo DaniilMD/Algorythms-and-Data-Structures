@@ -1,8 +1,8 @@
 #ifndef HW7_H_INCLUDED
 #define HW7_H_INCLUDED
-//Дементьев Д.М.
+//Р”РµРјРµРЅС‚СЊРµРІ Р”.Рњ.
 
-//Задание 1. Написать рекурсивную функцию обхода графа в глубину.
+//Р—Р°РґР°РЅРёРµ 1. РќР°РїРёСЃР°С‚СЊ СЂРµРєСѓСЂСЃРёРІРЅСѓСЋ С„СѓРЅРєС†РёСЋ РѕР±С…РѕРґР° РіСЂР°С„Р° РІ РіР»СѓР±РёРЅСѓ.
 #define GNAm 5
 int AdjMatrix[GNAm + 1][GNAm + 1];
 
@@ -54,7 +54,7 @@ int widthTravers(GraphNode *start, GraphNode *stop) {
     }
 }
 
-//Задание 2. Написать функцию обхода графа в ширину.
+//Р—Р°РґР°РЅРёРµ 2. РќР°РїРёСЃР°С‚СЊ С„СѓРЅРєС†РёСЋ РѕР±С…РѕРґР° РіСЂР°С„Р° РІ С€РёСЂРёРЅСѓ.
 int RecurDepthTravers(GraphNode *start, GraphNode *stop) {
     if (start->data == stop->data)
         return 1;
@@ -67,7 +67,7 @@ int RecurDepthTravers(GraphNode *start, GraphNode *stop) {
     }
     return 0;
 }
-//Задание 3. Запустить алгоритм Ли
+//Р—Р°РґР°РЅРёРµ 3. Р—Р°РїСѓСЃС‚РёС‚СЊ Р°Р»РіРѕСЂРёС‚Рј Р›Рё
 const int w = 11;
 const int h = 12;
 const int OBSTACLE = -1;
@@ -145,6 +145,5 @@ int lee(int sx, int sy, int ex, int ey) {
     }
     return 1;
 }
-
 
 #endif // HW7_H_INCLUDED
