@@ -7,34 +7,40 @@
 #include "HW2.h"
 #include "HW3.h"
 #include "HW4.h"
-#include "HW5.h"
+//#include "HW5.h"
 #include "HW6.h"
+#include "HW7.h"
 
 int main () {
-    //Test 1 task
-    const int HASize = 10;
-    char HashArr[HASize];
-    strcpy(HashArr, "shfhefvkjbrkjwvbjskjv");
-    for (int i = 0; i < HASize; i++){
-        printf("%d ", HashArr[i]);
-        printf("%c ", HashArr[i]);
+
+//Test 1 task
+    GraphNode GN[GNAm + 1];
+    for (int i = 0; i < GNAm + 1; i++) {
+        GN[i]->data = i;
+        GN[i]->used = 0;
+        GN[i]->index = i;
     }
-    printf("\n%d\n", HashFunc(HashArr, HASize));
+    AdjMatrix[1][2] = AdjMatrix[2][1] = 1;
+    AdjMatrix[1][4] = AdjMatrix[4][1] = 1;
+    AdjMatrix[3][4] = AdjMatrix[4][3] = 1;
+    AdjMatrix[4][5] = AdjMatrix[5][4] = 1;
+    AdjMatrix[2][5] = AdjMatrix[5][2] = 1;
 
-
-    //Test 2 task
-    const int BTNSize = 15;
-    TREETYPE TreeArr[BTNSize];
-    BTN *BTree = NULL;
-    for (int i = 0; i < BTNSize; i++){
-        TreeArr[i] = rand() % 25;
-        BTinsert(&BTree, TreeArr[i]);
+    for (int i = 0; i < GNAm + 1; i++) {
+        GN[i]->children = AdjMatrix[i]
     }
 
-    preOrderTravers(BTree);
-    printf("\n");
-    inOrderTravers(BTree);
-    printf("\n");
-    postOrderTravers(BTree);
-    printf("\n%d ", BTSearch(BTree, 11)->data);
+    widthTravers(GN[1], GN[5])
+
+//Test 2 task
+    for (int i = 0; i < GNAm + 1; i++) {
+        GN[i]->used = 0;
+    }
+    RecurDepthTravers(GN[1], GN[5]);
+
+//Test 3 task
+    printf("\n%d\n", lee(1, 1, 10 , 10));
+    for (int i = 0; i < len; i++) {
+        printf("%d %d\n", pointX[i], pointY[i]);
+    }
 }
